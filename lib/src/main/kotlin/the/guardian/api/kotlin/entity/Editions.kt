@@ -1,6 +1,10 @@
 package the.guardian.api.kotlin.entity
 
+import com.mashape.unirest.http.HttpResponse
+import com.mashape.unirest.http.Unirest
+import com.mashape.unirest.request.HttpRequest
 import the.guardian.api.kotlin.http.AbstractResponse
+import the.guardian.api.kotlin.http.editions.EditionsResponseWrapper
 
 /**
  * Class Editions
@@ -24,8 +28,6 @@ class Editions(_apiUrl: String): ApiEntity(_apiUrl) {
      * The editions endpoint accepts a query term and a format.
      * `format` defaults to 'json' when no format is specified.
      * When no query term is specified, all editions are fetched
-     *
-     * @return string The url to be queried
      */
     override fun buildUrl()
     {
@@ -33,6 +35,16 @@ class Editions(_apiUrl: String): ApiEntity(_apiUrl) {
     }
 
     override fun fetch(): AbstractResponse? {
-        TODO("Not yet implemented")
+        this.buildUrl()
+        val url = this.baseUrl
+        println("baseUrl ".plus(url))
+        val request: HttpRequest = Unirest.get(url).header("accept", "application/json")
+
+        val response: HttpResponse<EditionsResponseWrapper> = request.asObject(EditionsResponseWrapper::class.java)
+        val results = response.body.getResponse()
+
+        println("responsey ".plus(results))
+
+        return response.body.getResponse()
     }
 }

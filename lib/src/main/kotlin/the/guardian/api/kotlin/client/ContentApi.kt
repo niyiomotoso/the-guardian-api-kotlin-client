@@ -1,6 +1,7 @@
 package the.guardian.api.kotlin.client
 
 import the.guardian.api.kotlin.entity.Content
+import the.guardian.api.kotlin.entity.Editions
 import the.guardian.api.kotlin.entity.Sections
 import the.guardian.api.kotlin.entity.Tags
 
@@ -33,12 +34,21 @@ class ContentApi(_apiKey: String) {
     }
 
     /**
-     * Object factory for class Entity\Sections to fetch tags
+     * Object factory for class Entity\Sections to fetch sections
      */
     fun sections(): Sections {
         val baseUrl = "http://content.guardianapis.com/sections?api-key=".plus(apiKey)
 
         return Sections(baseUrl)
+    }
+
+    /**
+     * Object factory for class Entity\Editions to fetch editions
+     */
+    fun editions(): Editions {
+        val baseUrl = "http://content.guardianapis.com/editions?api-key=".plus(apiKey)
+
+        return Editions(baseUrl)
     }
 
 

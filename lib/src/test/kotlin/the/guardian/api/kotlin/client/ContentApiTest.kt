@@ -4,6 +4,7 @@
 package the.guardian.api.kotlin.client
 
 import the.guardian.api.kotlin.http.content.ContentResponse
+import the.guardian.api.kotlin.http.editions.EditionsResponse
 import the.guardian.api.kotlin.http.sections.SectionsResponse
 import the.guardian.api.kotlin.http.tags.TagsResponse
 import kotlin.test.Test
@@ -22,16 +23,22 @@ class ContentApiTest {
 //    }
 
 //    @Test fun testGetTags() {
-//        val tagsResponse: TagsResponse? = null
+//        val tagsResponse: EditionsResponse? = null
 //        val contentApiTest = ContentApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
 //        assertEquals(contentApiTest.tags().setQuery("apple")
 //            .setSection("technology")
 //            .setShowReferences("all").fetch(), tagsResponse)
 //    }
 
-    @Test fun testGetSections() {
-        val tagsResponse: SectionsResponse? = null
+//    @Test fun testGetSections() {
+//        val sectionsResponse: SectionsResponse? = null
+//        val contentApiTest = ContentApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+//        assertEquals(contentApiTest.sections().setQuery("business").fetch(), sectionsResponse)
+//    }
+
+    @Test fun testGetEditions() {
+        val editionsResponse: EditionsResponse? = null
         val contentApiTest = ContentApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        assertEquals(contentApiTest.sections().setQuery("business").fetch(), tagsResponse)
+        assertEquals(contentApiTest.editions().setQuery("uk").fetch(), editionsResponse)
     }
 }
