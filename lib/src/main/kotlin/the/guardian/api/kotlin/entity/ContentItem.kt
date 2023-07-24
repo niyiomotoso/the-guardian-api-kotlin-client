@@ -16,6 +16,4 @@ class ContentItem {
         override fun toString(): String {
                 return "ContentItem(id=$id, type=$type, sectionId=$sectionId, sectionName=$sectionName, webPublicationDate=$webPublicationDate, webTitle=$webTitle, webUrl=$webUrl, apiUrl=$apiUrl, pillarId=$pillarId, pillarName=$pillarName, isHosted=$isHosted)"
         }
-
-
 }

@@ -6,6 +6,7 @@ import com.mashape.unirest.http.ObjectMapper
 import com.mashape.unirest.http.Unirest
 import the.guardian.api.kotlin.http.AbstractResponse
 import java.io.IOException
+import java.net.URLEncoder
 
 /**
  * Base class for all available guardian API entities
@@ -42,8 +43,23 @@ abstract class ApiEntity(_baseUrl: String) {
     }
 
     /**
+     * Helps to build request URLs. Appends set request parameters to the URL
+     * @param string $attributeName Request parameter according to the guardian API docs
+     * @param mixed $attributeValue Value the parameter is set to. This is typically an int or a string
+     */
+    fun  appendToBaseUrl(attributeName: String, attributeValue: String): ApiEntity
+    {
+        if (attributeValue != "") {
+            val encodedValue = URLEncoder.encode(attributeValue, "UTF-8")
+            val url = "&".plus(attributeName).plus("=").plus(encodedValue)
+            this.baseUrl = this.baseUrl.plus(url)
+        }
+
+        return this
+    }
+
+    /**
      * Constructs valid request URL from set parameters
-     * @return string Valid URL from set parameters
      */
     abstract fun buildUrl()
 

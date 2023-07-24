@@ -188,21 +188,8 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
         this.showElements = showElements
         return this
     }
-    /**
-     * Helps to build request URLs. Appends set request parameters to the URL
-     * @param string $attributeName Request parameter according to the guardian API docs
-     * @param mixed $attributeValue Value the parameter is set to. This is typically an int or a string
-     */
-    fun  appendToBaseUrl(attributeName: String, attributeValue: String): ContentApiEntity
-    {
-        if (attributeValue != "") {
-            val encodedValue = URLEncoder.encode(attributeValue, "UTF-8")
-            val url = "&".plus(attributeName).plus("=").plus(encodedValue)
-            this.baseUrl = this.baseUrl.plus(url)
-        }
 
-        return this
-    }
+
     override fun buildUrl()
     {
         this.appendToBaseUrl("tag", this.tag!!)

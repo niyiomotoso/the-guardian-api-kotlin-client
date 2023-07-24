@@ -1,4 +1,4 @@
-package the.guardian.api.kotlin.http
+package the.guardian.api.kotlin.http.content
 
 class ContentResponseWrapper {
     private var response: ContentResponse? = null

@@ -4,54 +4,42 @@ import com.mashape.unirest.http.HttpResponse
 import com.mashape.unirest.http.Unirest
 import com.mashape.unirest.request.HttpRequest
 import the.guardian.api.kotlin.http.AbstractResponse
-import the.guardian.api.kotlin.http.content.ContentResponseWrapper
-import java.util.*
+import the.guardian.api.kotlin.http.sections.SectionsResponseWrapper
+import the.guardian.api.kotlin.http.tags.TagsResponseWrapper
 
 /**
- * Class Content
- * The content guardian API entity
+ * Class Sections
+ * The sections guardian API entity
  */
-class Content(_apiUrl: String): ContentApiEntity(_apiUrl)
-{
-    /**
-     * Query term
-     */
-    var queryFields: String = ""
-
+class Sections(_apiUrl: String): ApiEntity(_apiUrl) {
     /**
      * Sets the `query` attribute for this API entity
      * @param string query Free text to search for
      */
-    public fun setQuery(query: String): Content
+    fun setQuery(query: String): Sections
     {
         this.query = query
         return this
     }
 
-    public fun setQueryFields(queryFields: String): Content
-    {
-        this.queryFields = queryFields
-        return this
-    }
-
-    override fun buildUrl()
-    {
-        super.buildUrl()
-        this.appendToBaseUrl("q", this.query)
-        .appendToBaseUrl("query-fields", this.queryFields)
-    }
-
     /**
-     *
+     * builds URL depending on set fields to fetch sections.
+     * The sections endpoint accepts a query term and a format.
+     * `format` defaults to 'json' when no format is specified.
+     * When no query term is specified, all sections are fetched
      */
-    override fun fetch(): AbstractResponse?
+     override fun buildUrl()
     {
+        this.appendToBaseUrl("q", this.query)
+    }
+
+    override fun fetch(): AbstractResponse? {
         this.buildUrl()
         val url = this.baseUrl
         println("baseUrl ".plus(url))
         val request: HttpRequest = Unirest.get(url).header("accept", "application/json")
 
-        val response: HttpResponse<ContentResponseWrapper> = request.asObject(ContentResponseWrapper::class.java)
+        val response: HttpResponse<SectionsResponseWrapper> = request.asObject(SectionsResponseWrapper::class.java)
         val results = response.body.getResponse()
 
         println("responsey ".plus(results))
