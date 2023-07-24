@@ -1,4 +1,4 @@
-package the.guardian.api.kotlin.entity
+package the.guardian.api.kotlin.http.sections
 
 class SectionItem {
     var id: String? = null

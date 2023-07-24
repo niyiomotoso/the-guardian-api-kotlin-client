@@ -1,4 +1,4 @@
-package the.guardian.api.kotlin.entity;
+package the.guardian.api.kotlin.http.tags;
 
 class TagItem {
     var id: String? = null

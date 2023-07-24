@@ -1,7 +1,5 @@
 package the.guardian.api.kotlin.http.sections
 
-import the.guardian.api.kotlin.entity.SectionItem
-import the.guardian.api.kotlin.entity.TagItem
 import the.guardian.api.kotlin.http.AbstractResponse
 
 class SectionsResponse: AbstractResponse() {

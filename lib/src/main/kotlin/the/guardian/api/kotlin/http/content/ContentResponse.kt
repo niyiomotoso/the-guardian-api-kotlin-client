@@ -1,6 +1,5 @@
 package the.guardian.api.kotlin.http.content
 
-import the.guardian.api.kotlin.entity.ContentItem
 import the.guardian.api.kotlin.http.AbstractResponse
 
 class ContentResponse: AbstractResponse() {

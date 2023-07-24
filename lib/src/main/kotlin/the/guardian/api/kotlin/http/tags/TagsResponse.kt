@@ -1,6 +1,5 @@
 package the.guardian.api.kotlin.http.tags
 
-import the.guardian.api.kotlin.entity.TagItem
 import the.guardian.api.kotlin.http.AbstractResponse
 
 class TagsResponse: AbstractResponse() {

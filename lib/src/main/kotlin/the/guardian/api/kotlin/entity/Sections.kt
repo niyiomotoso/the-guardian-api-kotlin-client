@@ -5,7 +5,6 @@ import com.mashape.unirest.http.Unirest
 import com.mashape.unirest.request.HttpRequest
 import the.guardian.api.kotlin.http.AbstractResponse
 import the.guardian.api.kotlin.http.sections.SectionsResponseWrapper
-import the.guardian.api.kotlin.http.tags.TagsResponseWrapper
 
 /**
  * Class Sections
