@@ -11,8 +11,8 @@ import kotlin.test.assertEquals
 
 class GuardianApiTest {
     @Test fun testGetContent() {
-        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        val contentResponse = contentApiTest.content().setQuery("12 years a slave")
+        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+        val contentResponse = guardianApiTest.content().setQuery("12 years a slave")
         .setTag("film/film,tone/reviews")
         .setFromDate("2023-03-20")
         .setShowTags("contributor")
