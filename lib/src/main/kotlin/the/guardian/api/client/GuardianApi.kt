@@ -1,5 +1,6 @@
 package the.guardian.api.client
 
+import the.guardian.api.config.UrlMap
 import the.guardian.api.entity.*
 
 /**
@@ -15,17 +16,17 @@ class GuardianApi(_apiKey: String) {
     /**
      * Object factory for class Entity\Content to fetch contents
      */
-    fun content(): the.guardian.api.entity.Content {
-        val apiUrl = "http://content.guardianapis.com/search?api-key=".plus(apiKey)
+    fun content(): Content {
+        val apiUrl = UrlMap().CONTENT.plus("?api-key=").plus(apiKey)
 
-        return the.guardian.api.entity.Content(apiUrl)
+        return Content(apiUrl)
     }
 
     /**
      * Object factory for class Entity\Tags to fetch tags
      */
     fun tags(): Tags {
-        val apiUrl = "http://content.guardianapis.com/tags?api-key=".plus(apiKey)
+        val apiUrl = UrlMap().TAGS.plus("?api-key=").plus(apiKey)
 
         return Tags(apiUrl)
     }
@@ -34,7 +35,7 @@ class GuardianApi(_apiKey: String) {
      * Object factory for class Entity\Sections to fetch sections
      */
     fun sections(): Sections {
-        val apiUrl = "http://content.guardianapis.com/sections?api-key=".plus(apiKey)
+        val apiUrl = UrlMap().SECTIONS.plus("?api-key=").plus(apiKey)
 
         return Sections(apiUrl)
     }
@@ -43,7 +44,7 @@ class GuardianApi(_apiKey: String) {
      * Object factory for class Entity\Editions to fetch editions
      */
     fun editions(): Editions {
-        val apiUrl = "http://content.guardianapis.com/sections?api-key=".plus(apiKey)
+        val apiUrl = UrlMap().EDITIONS.plus("?api-key=").plus(apiKey)
 
         return Editions(apiUrl)
     }
@@ -53,7 +54,7 @@ class GuardianApi(_apiKey: String) {
      * Object factory for class Entity\SingleItem to fetch a single item
      */
     fun singleItem(): SingleItem {
-        val apiUrl = "http://content.guardianapis.com"
+        val apiUrl = UrlMap().BASE
 
         return SingleItem(apiUrl, apiKey!!)
     }
