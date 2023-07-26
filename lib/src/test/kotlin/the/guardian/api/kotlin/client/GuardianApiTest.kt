@@ -3,16 +3,18 @@
  */
 package the.guardian.api.kotlin.client
 
-import the.guardian.api.kotlin.http.editions.EditionsResponse
-import the.guardian.api.kotlin.http.sections.SectionsResponse
-import the.guardian.api.kotlin.http.singleItem.SingleItemResponse
+import org.junit.jupiter.api.BeforeEach
 import kotlin.test.Test
-import kotlin.test.assertEquals
 
 class GuardianApiTest {
+    private lateinit var guardianApi: GuardianApi
+    @BeforeEach
+    fun setUp() {
+        guardianApi = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+    }
     @Test fun testGetContent() {
-        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        val contentResponse = guardianApiTest.content().setQuery("12 years a slave")
+
+        val contentResponse = this.guardianApi.content().setQuery("12 years a slave")
         .setTag("film/film,tone/reviews")
         .setFromDate("2023-03-20")
         .setShowTags("contributor")
@@ -23,8 +25,7 @@ class GuardianApiTest {
     }
 
     @Test fun testGetTags() {
-        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        val tagsResponse = guardianApiTest.tags().setQuery("apple")
+        val tagsResponse = this.guardianApi.tags().setQuery("apple")
             .setSection("technology")
             .setShowReferences("all").fetch()
 
@@ -32,22 +33,19 @@ class GuardianApiTest {
     }
 
     @Test fun testGetSections() {
-        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        val sectionsResponse = guardianApiTest.sections().setQuery("business").fetch()
+        val sectionsResponse = this.guardianApi.sections().setQuery("business").fetch()
 
         println(sectionsResponse)
     }
 
     @Test fun testGetEditions() {
-        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        val editionsResponse = guardianApiTest.editions().setQuery("uk").fetch()
+        val editionsResponse = this.guardianApi.editions().setQuery("uk").fetch()
 
         println(editionsResponse)
     }
 
     @Test fun testGetSingleItem() {
-        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        val singleItemResponse= guardianApiTest.singleItem().setId("/sport/2022/oct/07/cricket-jos-buttler-primed-for-england-comeback-while-phil-salt-stays-focused")
+        val singleItemResponse= this.guardianApi.singleItem().setId("/sport/2022/oct/07/cricket-jos-buttler-primed-for-england-comeback-while-phil-salt-stays-focused")
         .setShowStoryPackage(true)
         .setShowEditorsPicks(true)
         .setShowMostViewed(true)
