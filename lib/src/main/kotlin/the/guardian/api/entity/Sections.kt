@@ -10,7 +10,7 @@ import the.guardian.api.http.sections.SectionsResponseWrapper
  * Class Sections
  * The sections guardian API entity
  */
-class Sections(_apiUrl: String): the.guardian.api.entity.ApiEntity(_apiUrl) {
+class Sections(_apiUrl: String): ApiEntity(_apiUrl) {
     /**
      * Sets the `query` attribute for this API entity
      * @param string query Free text to search for

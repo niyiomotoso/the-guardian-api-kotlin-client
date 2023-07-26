@@ -20,7 +20,7 @@ class Tags(_apiUrl: String): PageAndReferenceApiEntity(_apiUrl) {
      * @param string webTitle String every tag in results should start from
      * @return self
      */
-    public fun setWebTitle(webTitle: String): Tags
+    fun setWebTitle(webTitle: String): Tags
     {
         this.webTitle = webTitle
         return this
@@ -31,7 +31,7 @@ class Tags(_apiUrl: String): PageAndReferenceApiEntity(_apiUrl) {
      * @param string type Tag type
      * @return self
      */
-    public fun setType(type: String): Tags
+    fun setType(type: String): Tags
     {
         this.type = type
         return this

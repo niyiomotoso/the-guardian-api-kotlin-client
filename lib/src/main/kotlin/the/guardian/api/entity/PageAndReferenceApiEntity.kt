@@ -22,7 +22,7 @@ abstract class PageAndReferenceApiEntity(_apiUrl: String): the.guardian.api.enti
      * If `page` is not set, it defaults to 1
      * @param int $page Page index to be set
      */
-    public fun setPage(page: Int): PageAndReferenceApiEntity
+    fun setPage(page: Int): PageAndReferenceApiEntity
     {
         if(page < 1) {
             // throw InvalidArgumentException("Page cannot be negative or zero")
@@ -37,7 +37,7 @@ abstract class PageAndReferenceApiEntity(_apiUrl: String): the.guardian.api.enti
      * If `pageSize` is not set, it defaults to 20
      * @param int $pageSize Number of items per page
      */
-    public fun setPageSize(pageSize: Int): PageAndReferenceApiEntity
+    fun setPageSize(pageSize: Int): PageAndReferenceApiEntity
     {
         if(pageSize < 1) {
         // throw InvalidArgumentException("Page size cannot be negative or zero")
@@ -51,7 +51,7 @@ abstract class PageAndReferenceApiEntity(_apiUrl: String): the.guardian.api.enti
      * `section` supports boolean operators - ',' for AND. '|' for OR. '-' for NOT.
      * Valid section strings: "business,sports", "business", "business|sports"
      */
-    public fun setSection(section: String) : PageAndReferenceApiEntity
+    fun setSection(section: String) : PageAndReferenceApiEntity
     {
         this.section = section
         return this
@@ -62,7 +62,7 @@ abstract class PageAndReferenceApiEntity(_apiUrl: String): the.guardian.api.enti
      * `reference` supports boolean operators - ',' for AND. '|' for OR. '-' for NOT.
      * Valid reference strings: "isbn/9780349108391", "isbn/9780349108391,isbn/9780XXXXXXX"
      */
-    public fun setReference(reference: String): PageAndReferenceApiEntity
+    fun setReference(reference: String): PageAndReferenceApiEntity
     {
         this.reference = reference
 
@@ -73,7 +73,7 @@ abstract class PageAndReferenceApiEntity(_apiUrl: String): the.guardian.api.enti
      * Sets `reference-type(s)` to return only tags with references of those types
      * `reference` supports boolean operators - ',' for AND. '|' for OR. '-' for NOT.
      */
-    public fun setReferenceType(referenceType: String): PageAndReferenceApiEntity
+    fun setReferenceType(referenceType: String): PageAndReferenceApiEntity
     {
         this.referenceType = referenceType
         return this
@@ -86,7 +86,7 @@ abstract class PageAndReferenceApiEntity(_apiUrl: String): the.guardian.api.enti
      * See https://open-platform.theguardian.com/documentation/tag
      * for valid entries for this list
      */
-    public fun setShowReferences(showReferences: String): PageAndReferenceApiEntity
+    fun setShowReferences(showReferences: String): PageAndReferenceApiEntity
     {
         this.showReferences = showReferences
 

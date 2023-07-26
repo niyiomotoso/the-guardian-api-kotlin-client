@@ -85,7 +85,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * To set the star-rating for contents to be retrieved.
      * The `star-rating` attribute doesn't support boolean operators
      */
-    public fun setStarRating(starRating: String): ContentApiEntity {
+    fun setStarRating(starRating: String): ContentApiEntity {
         this.starRating = starRating
         return this
     }
@@ -93,7 +93,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
     /**
      * Set `from-date`. Only content on or after `from-date` will be fetched
      */
-    public fun setFromDate(fromDate: String): ContentApiEntity {
+    fun setFromDate(fromDate: String): ContentApiEntity {
         this.fromDate = fromDate
         return this
     }
@@ -101,7 +101,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
     /**
      * Set `to-date`. Only content on or before `to-date` will be fetched
      */
-    public fun setToDate(toDate: String): ContentApiEntity {
+    fun setToDate(toDate: String): ContentApiEntity {
         this.toDate = toDate
         return this
     }
@@ -110,7 +110,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Set `use-date` to filter the results
      * @param string useDate Date type to filter results. See https://open-platform.theguardian.com/documentation/search
      */
-    public fun setUseDate(useDate: String): ContentApiEntity {
+    fun setUseDate(useDate: String): ContentApiEntity {
         this.useDate = useDate
         return this
     }
@@ -119,7 +119,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Set `order-by` to return results in the specified order
      * @param string orderBy One of `newest`, `oldest`, or `relevance`. See the docs
      */
-    public fun setOrderBy(orderBy: String): ContentApiEntity {
+    fun setOrderBy(orderBy: String): ContentApiEntity {
         this.orderBy = orderBy
         return this
     }
@@ -128,7 +128,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Set `order-date` to choose the type of date to be used to order the results
      * @param string orderDate One of `published`, `newspaper-edition`, or `last-modified`. See the docs
      */
-    public fun setOrderDate(orderDate: String): ContentApiEntity {
+    fun setOrderDate(orderDate: String): ContentApiEntity {
         this.orderDate = orderDate
         return this
     }
@@ -137,7 +137,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Set `show-fields` to choose the fields to be added to the content
      * @param string showFields String list of desired fields. See the docs
      */
-    public fun setShowFields(showFields: String): ContentApiEntity {
+    fun setShowFields(showFields: String): ContentApiEntity {
         this.showFields = showFields
         return this
     }
@@ -146,7 +146,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Set `show-tags` to add associated metadata tags
      * @param string showTags String list of desired metadata tags. See the docs
      */
-    public fun setShowTags(showTags: String): ContentApiEntity {
+    fun setShowTags(showTags: String): ContentApiEntity {
         this.showTags = showTags
         return this
     }
@@ -155,7 +155,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Set `show-section` to add associated metadata section
      * @param string showSection Boolean string - 'true'. See the docs
      */
-    public fun setShowSection(showSection: String): ContentApiEntity {
+    fun setShowSection(showSection: String): ContentApiEntity {
         this.showSection = showSection
         return this
     }
@@ -164,7 +164,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Set `show-blocks` to add associated blocks
      * @param string showBlocks String list of blocks. See the docs
      */
-    public fun setShowBlocks(showBlocks: String): ContentApiEntity {
+    fun setShowBlocks(showBlocks: String): ContentApiEntity {
         this.showBlocks = showBlocks
         return this
     }
@@ -174,7 +174,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Accepted elements - `audio`, `image`, `video`, `all`
      * @param string showElements String list of elements. See the docs
      */
-    public fun setShowElements(showElements: String): ContentApiEntity {
+    fun setShowElements(showElements: String): ContentApiEntity {
         this.showElements = showElements
         return this
     }
@@ -184,7 +184,7 @@ abstract class ContentApiEntity(_apiUrl: String): PageAndReferenceApiEntity(_api
      * Accepted values - `syndicatable`, `subscription-databases`, `all`
      * @param string showRights String list of rights. See the docs
      */
-    public fun setShowRights(showElements: String): ContentApiEntity {
+    fun setShowRights(showElements: String): ContentApiEntity {
         this.showElements = showElements
         return this
     }
