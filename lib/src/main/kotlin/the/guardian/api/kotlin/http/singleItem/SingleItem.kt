@@ -1,6 +1,6 @@
-package the.guardian.api.kotlin.http.content
+package the.guardian.api.kotlin.http.singleItem
 
-class ContentItem {
+class SingleItem {
         var id: String? = null
         var type: String? = null
         var sectionId: String? = null

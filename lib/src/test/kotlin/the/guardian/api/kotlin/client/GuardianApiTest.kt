@@ -3,17 +3,14 @@
  */
 package the.guardian.api.kotlin.client
 
-import the.guardian.api.kotlin.http.content.ContentResponse
 import the.guardian.api.kotlin.http.editions.EditionsResponse
-import the.guardian.api.kotlin.http.sections.SectionsResponse
-import the.guardian.api.kotlin.http.tags.TagsResponse
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ContentApiTest {
+class GuardianApiTest {
 //    @Test fun testGetContent() {
-//        val contentResponse: ContentResponse? = null
-//        val contentApiTest = ContentApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+//        val contentResponse: SingleItemResponse? = null
+//        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
 //        assertEquals(contentApiTest.content().setQuery("12 years a slave")
 //        .setTag("film/film,tone/reviews")
 //        .setFromDate("2023-03-20")
@@ -24,7 +21,7 @@ class ContentApiTest {
 
 //    @Test fun testGetTags() {
 //        val tagsResponse: EditionsResponse? = null
-//        val contentApiTest = ContentApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+//        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
 //        assertEquals(contentApiTest.tags().setQuery("apple")
 //            .setSection("technology")
 //            .setShowReferences("all").fetch(), tagsResponse)
@@ -32,13 +29,13 @@ class ContentApiTest {
 
 //    @Test fun testGetSections() {
 //        val sectionsResponse: SectionsResponse? = null
-//        val contentApiTest = ContentApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+//        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
 //        assertEquals(contentApiTest.sections().setQuery("business").fetch(), sectionsResponse)
 //    }
 
     @Test fun testGetEditions() {
         val editionsResponse: EditionsResponse? = null
-        val contentApiTest = ContentApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        assertEquals(contentApiTest.editions().setQuery("uk").fetch(), editionsResponse)
+        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+        assertEquals(guardianApiTest.editions().setQuery("uk").fetch(), editionsResponse)
     }
 }
