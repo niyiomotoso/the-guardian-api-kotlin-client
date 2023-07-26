@@ -4,6 +4,7 @@
 package the.guardian.api.kotlin.client
 
 import the.guardian.api.kotlin.http.editions.EditionsResponse
+import the.guardian.api.kotlin.http.singleItem.SingleItemResponse
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -33,9 +34,19 @@ class GuardianApiTest {
 //        assertEquals(contentApiTest.sections().setQuery("business").fetch(), sectionsResponse)
 //    }
 
-    @Test fun testGetEditions() {
-        val editionsResponse: EditionsResponse? = null
+//    @Test fun testGetEditions() {
+//        val editionsResponse: EditionsResponse? = null
+//        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+//        assertEquals(guardianApiTest.editions().setQuery("uk").fetch(), editionsResponse)
+//    }
+
+    @Test fun testGetSingleItem() {
+        val singleItemResponse: SingleItemResponse? = null
         val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        assertEquals(guardianApiTest.editions().setQuery("uk").fetch(), editionsResponse)
+        assertEquals(guardianApiTest.singleItem().setId("/sport/2022/oct/07/cricket-jos-buttler-primed-for-england-comeback-while-phil-salt-stays-focused")
+        .setShowStoryPackage(true)
+        .setShowEditorsPicks(true)
+        .setShowMostViewed(true)
+        .setShowRelated(true).fetch(), singleItemResponse)
     }
 }

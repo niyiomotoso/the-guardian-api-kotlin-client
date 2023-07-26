@@ -7,7 +7,7 @@ import the.guardian.api.kotlin.http.AbstractResponse
 import the.guardian.api.kotlin.http.content.ContentResponseWrapper
 import the.guardian.api.kotlin.http.singleItem.SingleItemResponseWrapper
 
-class SingleItem(_apiUrl: String): ContentApiEntity(_apiUrl)
+class SingleItem(_baseUrl: String, _apiKey: String): ContentApiEntity(_baseUrl)
 {
     // query term
     var id: String = ""
@@ -18,6 +18,10 @@ class SingleItem(_apiUrl: String): ContentApiEntity(_apiUrl)
     var showMostViewed: String = ""
     var showRelated: String = ""
     var apiKey: String = ""
+
+    init {
+        this.apiKey = _apiKey
+    }
     
     /**
      * Set the ID for the content to fetch.

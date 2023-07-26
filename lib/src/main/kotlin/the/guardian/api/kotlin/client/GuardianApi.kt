@@ -50,11 +50,11 @@ class GuardianApi(_apiKey: String) {
 
 
     /**
-     * Object factory for class Entity\Editions to fetch editions
+     * Object factory for class Entity\SingleItem to fetch a single item
      */
     fun singleItem(): SingleItem {
         val apiUrl = "http://content.guardianapis.com"
 
-        return SingleItem(apiUrl)
+        return SingleItem(apiUrl, apiKey!!)
     }
 }
