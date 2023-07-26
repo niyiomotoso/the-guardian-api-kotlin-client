@@ -1,7 +1,5 @@
 package the.guardian.api.entity
 
-import the.guardian.api.http.AbstractResponse
-import java.net.URLEncoder
 import java.text.SimpleDateFormat
 
 /**

@@ -4,7 +4,6 @@ import com.mashape.unirest.http.HttpResponse
 import com.mashape.unirest.http.Unirest
 import com.mashape.unirest.request.HttpRequest
 import the.guardian.api.http.AbstractResponse
-import the.guardian.api.http.content.ContentResponseWrapper
 import the.guardian.api.http.singleItem.SingleItemResponseWrapper
 
 class SingleItem(_baseUrl: String, _apiKey: String): ContentApiEntity(_baseUrl)
