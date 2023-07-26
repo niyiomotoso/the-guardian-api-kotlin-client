@@ -43,7 +43,7 @@ class GuardianApi(_apiKey: String) {
      * Object factory for class Entity\Editions to fetch editions
      */
     fun editions(): Editions {
-        val apiUrl = "http://content.guardianapis.com"
+        val apiUrl = "http://content.guardianapis.com/sections?api-key=".plus(apiKey)
 
         return Editions(apiUrl)
     }

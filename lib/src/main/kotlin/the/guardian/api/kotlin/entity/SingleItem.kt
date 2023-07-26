@@ -110,13 +110,8 @@ class SingleItem(_baseUrl: String, _apiKey: String): ContentApiEntity(_baseUrl)
     override fun fetch(): AbstractResponse? {
         this.buildUrl()
         val url = this.baseUrl
-        println("baseUrl ".plus(url))
         val request: HttpRequest = Unirest.get(url).header("accept", "application/json")
-
         val response: HttpResponse<SingleItemResponseWrapper> = request.asObject(SingleItemResponseWrapper::class.java)
-        val results = response.body.getResponse()
-
-        println("responsey ".plus(results))
 
         return response.body.getResponse()
     }

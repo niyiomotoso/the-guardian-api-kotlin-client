@@ -4,49 +4,55 @@
 package the.guardian.api.kotlin.client
 
 import the.guardian.api.kotlin.http.editions.EditionsResponse
+import the.guardian.api.kotlin.http.sections.SectionsResponse
 import the.guardian.api.kotlin.http.singleItem.SingleItemResponse
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class GuardianApiTest {
-//    @Test fun testGetContent() {
-//        val contentResponse: SingleItemResponse? = null
-//        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-//        assertEquals(contentApiTest.content().setQuery("12 years a slave")
-//        .setTag("film/film,tone/reviews")
-//        .setFromDate("2023-03-20")
-//        .setShowTags("contributor")
-//        .setShowFields("starRating,headline,thumbnail,short-url")
-//        .setOrderBy("relevance").fetch(), contentResponse)
-//    }
+    @Test fun testGetContent() {
+        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+        val contentResponse = contentApiTest.content().setQuery("12 years a slave")
+        .setTag("film/film,tone/reviews")
+        .setFromDate("2023-03-20")
+        .setShowTags("contributor")
+        .setShowFields("starRating,headline,thumbnail,short-url")
+        .setOrderBy("relevance").fetch()
 
-//    @Test fun testGetTags() {
-//        val tagsResponse: EditionsResponse? = null
-//        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-//        assertEquals(contentApiTest.tags().setQuery("apple")
-//            .setSection("technology")
-//            .setShowReferences("all").fetch(), tagsResponse)
-//    }
+        println(contentResponse)
+    }
 
-//    @Test fun testGetSections() {
-//        val sectionsResponse: SectionsResponse? = null
-//        val contentApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-//        assertEquals(contentApiTest.sections().setQuery("business").fetch(), sectionsResponse)
-//    }
+    @Test fun testGetTags() {
+        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+        val tagsResponse = guardianApiTest.tags().setQuery("apple")
+            .setSection("technology")
+            .setShowReferences("all").fetch()
 
-//    @Test fun testGetEditions() {
-//        val editionsResponse: EditionsResponse? = null
-//        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-//        assertEquals(guardianApiTest.editions().setQuery("uk").fetch(), editionsResponse)
-//    }
+        println(tagsResponse)
+    }
+
+    @Test fun testGetSections() {
+        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+        val sectionsResponse = guardianApiTest.sections().setQuery("business").fetch()
+
+        println(sectionsResponse)
+    }
+
+    @Test fun testGetEditions() {
+        val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+        val editionsResponse = guardianApiTest.editions().setQuery("uk").fetch()
+
+        println(editionsResponse)
+    }
 
     @Test fun testGetSingleItem() {
-        val singleItemResponse: SingleItemResponse? = null
         val guardianApiTest = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
-        assertEquals(guardianApiTest.singleItem().setId("/sport/2022/oct/07/cricket-jos-buttler-primed-for-england-comeback-while-phil-salt-stays-focused")
+        val singleItemResponse= guardianApiTest.singleItem().setId("/sport/2022/oct/07/cricket-jos-buttler-primed-for-england-comeback-while-phil-salt-stays-focused")
         .setShowStoryPackage(true)
         .setShowEditorsPicks(true)
         .setShowMostViewed(true)
-        .setShowRelated(true).fetch(), singleItemResponse)
+        .setShowRelated(true).fetch()
+
+        println(singleItemResponse)
     }
 }
