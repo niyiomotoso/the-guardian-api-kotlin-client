@@ -12,7 +12,7 @@ Sign up for an API key [here](https://open-platform.theguardian.com/access)
 The primary `Client\GuardianApi` class is a factory class that creates objects for each of the API modules, allowing you to make requests to any of them with your desired request parameters. You have to first create an object for it, then access your desired API module via the object. See the code snippets below:
 
 ```kotlin
-val guardianApi = GuardianApi("9cb97729-b42b-4c0a-832a-84cc03c43841")
+val guardianApi = GuardianApi(THE_GUARDIAN_API_KEY)
 ```
 
 **For Content:**
