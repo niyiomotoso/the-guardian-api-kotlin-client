@@ -1,7 +1,11 @@
 package the.guardian.api.client
 
 import the.guardian.api.config.UrlMap
-import the.guardian.api.entity.*
+import the.guardian.api.entity.SingleItem
+import the.guardian.api.entity.Sections
+import the.guardian.api.entity.Content
+import the.guardian.api.entity.Editions
+import the.guardian.api.entity.Tags
 
 /**
  *
@@ -10,7 +14,19 @@ class GuardianApi(_apiKey: String) {
     private var apiKey: String? = null
 
     init {
+        this.validateApiKey(_apiKey)
         this.apiKey = _apiKey
+    }
+
+    /**
+     * make sure the api key is valid
+     */
+    fun validateApiKey(apiKey: String): String {
+        if (apiKey.length < 4) {
+            throw IllegalArgumentException("API key \"$apiKey\" is too short, and thus invalid.")
+        }
+
+        return apiKey
     }
 
     /**
